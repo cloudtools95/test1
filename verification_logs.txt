@@ -1,0 +1,912 @@
+asa> 
+asa> en 
+Password: *****
+asa# conf ter
+asa(config)# 
+
+***************************** NOTICE *****************************
+
+Help to improve the ASA platform by enabling anonymous reporting,
+which allows Cisco to securely receive minimal error and health
+information from the device. To learn more about this feature,
+please visit: http://www.cisco.com/go/smartcall
+
+Would you like to enable anonymous error reporting to help improve
+the product? [Y]es, [N]o, [A]sk later: 
+asa(config)# 
+asa(config)# sh ver
+
+Cisco Adaptive Security Appliance Software Version 99.14(3)15 
+SSP Operating System Version 2.8(1.129)
+Device Manager Version 7.14(1)
+
+Compiled on Mon 07-Jun-21 00:02 GMT by builders
+System image file is "disk0:/fxos-lfbff-k8.2.8.1.129.SPA"
+Config file at boot was "startup-config"
+
+asa up 2 mins 2 secs
+
+SSP Slot Number: 1  
+
+Hardware:   FPR4K-SM-12, 56102 MB RAM, CPU Xeon E5 series 2200 MHz, 1 CPU (24 cores)
+
+Encryption hardware device : Cisco FP Crypto on-board accelerator (revision 0x1)
+                             Boot microcode        : CN35x-MC-Boot-0001
+                             SSL/IKE microcode     : CNN35x-MC-SSL-0014
+                             IPSec microcode       : CNN35x-MC-IPSEC-0005
+                             Number of accelerators: 1
+
+4099: Int: Internal-Data0/0    : address is 0015.a500.01ef, irq 11
+4101: Int: Internal-Data0/1    : address is 0015.a500.001f, irq 10
+4102: Int: Internal-Data0/2    : address is 0000.0001.0003, irq 0
+
+License mode: Smart Licensing
+
+Licensed features for this platform:
+Maximum Physical Interfaces       : Unlimited      
+Maximum VLANs                     : 1024           
+Inside Hosts                      : Unlimited      
+Failover                          : Active/Active  
+Encryption-DES                    : Enabled        
+Encryption-3DES-AES               : Enabled        
+Security Contexts                 : 10             
+Carrier                           : Disabled       
+AnyConnect Premium Peers          : 10000          
+AnyConnect Essentials             : Disabled       
+Other VPN Peers                   : 10000          
+Total VPN Peers                   : 10000          
+AnyConnect for Mobile             : Enabled        
+AnyConnect for Cisco VPN Phone    : Enabled        
+Advanced Endpoint Assessment      : Enabled        
+Shared License                    : Disabled       
+Total TLS Proxy Sessions          : 10000          
+Cluster                           : Enabled        
+
+Serial Number: FLM23420F9H
+Configuration last modified by enable_15 at 08:42:31.800 UTC Fri Jun 25 2021
+asa(config)#  
+asa(config)# 
+asa(config)# sh mode
+asa(config)# sh mode 
+Security context mode: single 
+asa(config)# 
+asa(config)# 
+asa(config)# sh cpu
+System CPU utilization for 5 seconds = 0%; 1 minute: 0%; 5 minutes: 0%
+asa(config)# 
+asa(config)# 
+asa(config)# sh cpu det
+asa(config)# sh cpu detailed 
+
+Break down of per-core data path versus control point cpu usage:
+Core         5 sec            1 min            5 min
+Core 0       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 1       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 2       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 3       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 4       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 5       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 6       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 7       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 8       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 9       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 10      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 11      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 12      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 13      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 14      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 15      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 16      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 17      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 18      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 19      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 20      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 21      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+              
+Current control point elapsed versus the data and control point elapsed for:
+      5 seconds = 1.8%; 1 minute: 1.7%; 5 minutes: 0.8%
+
+
+CPU utilization of external processes for:
+      5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+
+
+Total System CPU utilization for:
+      5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+
+asa(config)# 
+asa(config)# 
+asa(config)# sh mode
+asa(config)# sh mode 
+Security context mode: single 
+asa(config)# 
+asa(config)# mode
+asa(config)# mode mul
+asa(config)# mode multiple 
+WARNING: This command will change the behavior of the device
+WARNING: This command will initiate a Reboot
+Proceed with change mode? [confirm] 
+Convert the system configuration? [confirm] 
+!
+The old running configuration file will be written to flash
+
+Converting the configuration - this may take several minutes for a large configuration
+
+The admin context configuration will be written to flash
+
+The new running configuration file was written to flash
+Security context mode: multiple 
+asa(config)# 
+
+
+***
+*** --- START GRACEFUL SHUTDOWN ---
+***
+*** Message to all terminals:
+***
+***   change mode
+Shutting down Application Agent
+Shutting down isakmp
+Shutting down webvpn
+Shutting down sw-module
+Shutting down License Controller
+Shutting down File system
+
+
+
+***
+*** --- SHUTDOWN NOW ---
+***
+*** Message to all terminals:
+***
+***   change mode
+Process shutdown finished
+Rebooting... (status 0x9)
+..
+INIT: Sending pStopping all devices.
+Stopping OpenBSD Secure Shell server: sshd
+stopped /usr/sbin/sshd (pid 1578)
+done.
+Stopping Advanced Configuration and Power Interface daemon: stopped /usr/sbin/acpid (pid 1501)
+acpid.
+Stopping system message bus: dbus.
+Stopping ntpd: stopped process in pidfile '/var/run/ntp.pid' (pid 15361)
+done
+Stopping random number generator daemon.
+Stopping internet superserver: xinetd.
+Stopping syslog-ng:stopped process in pidfile '/var/run/fxos-syslog-ng.pid' (pid 1230)
+.
+Failed to stop kdump!
+Stopping crond: OK
+Deconfiguring network interfaces... done.
+SSP-Security-Module is shutting down ...
+Fri Jun 25 08:44:02 UTC 2021 SHUTDOWN WARNING: Beginning System Shutdown request for CSP Apps
+Fri Jun 25 08:44:02 UTC 2021 SHUTDOWN WARNING: Continue System Shutdown request for CSP Apps
+Sending ALL processes the TERM signal ...
+acpid: exiting
+Note: SIGKILL_ALL will be triggered after after 1 + 2 secs ...
+Sending ALL processes the KILL signal ...
+Deactivating swap...
+Unmounting local filesystems...
+Rebooting... [  445.786315] reboot: Restarting system
+ Cisco Systems, Inc. 
+ Configuring and testing memory.. 
+[=3h
+
+Cisco Systems, Inc. 
+ Configuring and testing memory.. 
+ Configuring platform hardware...
+
+
+Bios Version : FXOSSM1.1.2.1.18.052320191712                                                                    Platform ID  : FXOSSM1                                                                                          Processor(s) Intel(R) Xeon(R) CPU E5-2658 v3 @ 2.20GHz                                                          Total Memory  = 64 GB Effective Memory = 64 GB                                                                  Memory Operating Speed 2133 Mhz                                                                                                                                                                                                                                        
+Please wait, preparing to boot.. ................................................
+...........................................
+UEFI Interactive Shell v2.0. UEFI v2.40 (American Megatrends, 0x0005000B). Revision 1.02
+Mapping table
+      fs0: Alias(s):HD17a65535a1:;blk1:
+          PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)/HD(1,MBR,0x00002CF0,0x800,0xEE6800)
+     blk0: Alias(s):
+          PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+     blk2: Alias(s):
+          PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)/HD(2,MBR,0x00002CF0,0xEE7000,0x3BA000)
+     blk3: Alias(s):
+          PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)/HD(3,MBR,0x00002CF0,0x12A1000,0x950000)
+     blk4: Alias(s):
+          PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)/HD(4,MBR,0x00002CF0,0x1BF1000,0x15899000)
+     blk5: Alias(s):
+          PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)/HD(4,MBR,0x00002CF0,0x1BF1000,0x15899000)/HD(1,MBR,0x00000000,0x1BF1800,0x5D22000)
+     blk6: Alias(s):
+          PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)/HD(4,MBR,0x00002CF0,0x1BF1000,0x15899000)/HD(2,MBR,0x00000000,0x7914000,0xFB76000)
+To launch ROMMON.
+
+CpuFrequency = 2200002 KHz
+
+
+Cisco FXOSSM1 Blade Rommon 1.2.1.18, May 23 2019 17:17:13
+Platform: SSPXRU
+
+
+INFO: enic_identify: Enabling Adapter driver...
+INFO: enic_identify: Adapter driver enabled.
+INFO: init_spi_interface: HSFS_BERASE_4K.
+INFO: enic_init: bar[0].vaddr 0xf1d00000.
+INFO: enic_init: bar[2].vaddr 0xf1d10000.
+INFO: enic_init: eNic port MTU is 1500.
+INFO: enic_init: eNic bsize 1500 ring size 512.
+INFO: enic_init: Waiting for Adapter link...
+INFO: enic_init: Adapter link detected.
+INFO: nb_eth_app_init: MAC address for interface 0: 00 15 a5 01 01 00 
+INFO: nb_eth_app_init: IP address 127.128.1.254
+INFO: get_image_file_size: Could not open file 'fs0:cmdboot.txt'.
+image_size of fs0:cmdboot.txt : -1 
+INFO: fs0:cmdboot.txt does not exist, use retrieved data instead.
+
+Start communicating with MIO in blade slot 1...
+INFO: Allocated 1000 bytes of memory for cmd at 0x76e09918.
+INFO: Allocated 1000 bytes of memory for status at 0x76e09498.
+INFO: Allocated 196608 bytes of memory for key file at 0x76dd8018.
+INFO: Status code 1: 'rommon initialize is completed'.
+
+INFO: tftp_open: '/rommon/status_1.txt'@127.128.254.1 via 127.128.254.1
+!
+INFO: nb_tftp_upload: 32 bytes sent.
+
+tftpget 0x76e09918 1000
+INFO: tftp_open: '/rommon/command_1.txt'@127.128.254.1 via 127.128.254.1
+
+Received 164 bytes
+
+WARNING: retrieve_mio_cmd_info: Invalid checksum 0x0.
+
+tftpget 0x76dd8018 196608
+
+INFO: tftp_open: 'rommon/key_1.bin'@127.128.254.1 via 127.128.254.1
+
+Received 131636 bytes
+
+INFO: Status code 8: 'rommon succeeds to retrieve key file'.
+
+INFO: tftp_open: '/rommon/status_1.txt'@127.128.254.1 via 127.128.254.1
+!
+INFO: nb_tftp_upload: 32 bytes sent.
+
+INFO: Primary keys in flash are up-to-date.
+INFO: Backup keys in flash are up-to-date.
+INFO: Software keys in flash are up-to-date.
+continue check local image
+the image file path: installables/chassis/fxos-lfbff-k8.2.8.1.129.SPA
+the image file name only: fxos-lfbff-k8.2.8.1.129.SPA
+local_image_file: fs0:fxos-lfbff-k8.2.8.1.129.SPA
+INFO: File 'fs0:fxos-lfbff-k8.2.8.1.129.SPA' has 163120144 bytes.
+local_image_file_size 163120144
+Found image fs0:fxos-lfbff-k8.2.8.1.129.SPA in local storage, boot local image.
+set pboot_image fxos-lfbff-k8.2.8.1.129.SPA
+INFO: File 'fs0:fxos-lfbff-k8.2.8.1.129.SPA' has 163120144 bytes.
+INFO: 'fs0:fxos-lfbff-k8.2.8.1.129.SPA' has 163120144 bytes
+INFO: Booting LFBFF image...
+INFO: Status code 7: 'rommon about to verify image signature from local disk'.
+
+INFO: tftp_open: '/rommon/status_1.txt'@127.128.254.1 via 127.128.254.1
+!
+INFO: nb_tftp_upload: 32 bytes sent.
+
+
+Linux version: 4.1.21-WR8.0.0.25_standard (builders@sjc-releng14) #1 SMP Fri Aug 21 09:51:24 PDT 2020
+kernel_image = 0x76034958, kernel_size=0x563ad0
+Image validated
+INIT: version 2.88 booting
+Starting udev
+Configuring network interfaces... done.
+Populating dev cache
+realpath: '/dev/disk/by-path/*': No such file or directory
+Block device not found. Continue with /dev/sda.
+fsck.fat 3.0.28 (2015-05-16)
+Starting check/repair pass.
+Starting verification pass.
+/dev/sda1: 5 files, 39830/1949212 clusters
+fsck.fat(/dev/sda1) returned 0
+e2fsck 1.42.9 (28-Dec-2013)
+	Using EXT2FS Library version 1.42.9, 28-Dec-2013
+fsck.ext3(/dev/sda2) returned 0
+e2fsck 1.42.9 (28-Dec-2013)
+	Using EXT2FS Library version 1.42.9, 28-Dec-2013
+fsck.ext3(/dev/sda3) returned 0
+e2fsck 1.42.9 (28-Dec-2013)
+	Using EXT2FS Library version 1.42.9, 28-Dec-2013
+fsck.ext3(/dev/sda5) returned 0
+mount_disk_xfs. device: /dev/sda6, dir: /opt/cisco/csp, mount returned: 0.
+Starting syslog-ng:.
+kaslr rw console=ttyS0,38400 loglevel=2 auto kstack=128 reboot=force panic=1 ide_generic.probe_mask=0x1 ide1=noprobe pci=nocrs pci=realloc processor.max_cstate=1 iommu=pt nousb platform=sspxru boot_img=disk0:/fxos-lfbff-k8.2.8.1.129.SPA ciscodmasz=524288 cisconrsvsz=1572864 hugepagesz=1g hugepages=9 pti=off  rom_ver=1.2.1.18 ssp_mode=0
+Create libvirt group
+Start libvirtd Service
+ * Starting virtualization library daemon: libvirtd
+no /usr/bin/dnsmasq found; none killed
+2021-06-25 08:45:54.692+0000: 1258: info : libvirt version: 1.2.19
+2021-06-25 08:45:54.692+0000: 1258: warning : virGetHostname:667 : getaddrinfo failed for 'ciscoasa': Temporary failure in name resolution                                               [ ok ]
+Disable the default virtual networks
+Network default destroyed
+
+Done with libvirt initialization
+Running postinst /etc/rpm-postinsts/100-dnsmasq...
+INIT: Entering runlevel: 3pos
+Starting system message bus: dbus.
+Stopping all devices.
+Starting all devices.
+Checking status of all devices.
+There is 0 QAT acceleration device(s) in the system:
+Starting OpenBSD Secure Shell server: sshd
+done.
+Starting Advanced Configuration and Power Interface daemon: acpid.
+acpid: starting up with netlink and the input layer
+acpid: 1 rule loaded
+acpid: waiting for events: event logging is off
+Starting random number generator daemonUnable to open file: /dev/tpm0
+.
+Starting internet superserver: xinetd.
+No makedumpfile found.
++++++++++++++++ BOOT CLI FILES COPIED +++++++++++++++++++++++++++
+Restarting OpenBSD Secure Shell server: sshd
+stopped /usr/sbin/sshd (pid 1498)
+done.
+System Mode Check: NATIVE mode assigned
+Turbo Boost is UNSUPPORTED on this platform.
+
+***********************************************************************************
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ To go to Maintenance Mode, Please type  YES  and press [ENTER] within 5 seconds:
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+***********************************************************************************
+SSP System continue for Regular Boot Sequence
+Starting ntpd: done
+Starting crond: OK
+FTD
+1:/opt/cisco/csp/cores
+Start_CSP_RcInit in Progress...........
+INFO:-MspCheck: Configuration Xml found is /opt/cisco/csp/applications/configs/cspCfg_cisco-asa.99.14.3.15__asa_001_JMX2349L0245HENXB15.xml
+INFO:-MspCheck: CSPID for App is cisco-asa.99.14.3.15__asa_001_JMX2349L0245HENXB15
+INFO:-MspCheck: Configuration Xml found is /opt/cisco/csp/applications/configs/cspCfg_cisco-ftd.6.2.3.83__ftd_001_JMX2349L024O9KIRB1.xml.bak
+
+
+
+
+IO Memory Nodes: 1
+IO Memory Per Node: 2147483648 bytes num_pages = 524288 page_size = 4096
+
+Global Reserve Memory Per Node: 6442450944 bytes Nodes=1
+
+LCMB: got DMA 2147483648 bytes on numa-id=0, phys=0xf80000000, virt=0x7f9400000000
+LCMB: HEAP-CACHE POOL got 6442450944 bytes on numa-id=0, virt=0x7f9240000000
+
+total_reserved_mem = 2147483648 
+
+total_heapcache_mem = 6442450944 
+total mem 59239948288 system 67517423616 kernel 134217728 image 113489680
+new 59239948288 old 50873518331 reserve 8589934592 priv new 50784231424 priv old 49102507008
+Processor memory:  59239948288
+M_MMAP_THRESHOLD 65536, M_MMAP_MAX 903929
+POST started...
+POST finished, result is 0 (hint: 1 means it failed)
+
+Cisco Adaptive Security Appliance Software Version 99.14(3)15
+
+Compiled on Mon 07-Jun-21 00:02 GMT by builders
+total 2 num 9 22 -1855814391 22030 1702881600 32766 -1839766557 22030
+Nic assigned 8 21 
+
+Total NICs found: 4
+ENIC: Detected new memory model for enic 4099
+Flow table memory is successfully mapped at 0x00007f93ed040000
+Rewrite memory is successfully mapped at 0x00007f93dd040000
+en_vtun rev00 Backplane Tap Interface     @ index 4102 MAC: 0000.0001.0003
+WARNING: Attribute already exists in the dictionary.
+Creating context 'system'... Encryption hardware device : Cisco FP Crypto on-board accelerator (revision 0x1)
+                             Boot microcode        : CN35x-MC-Boot-0001
+                             SSL/IKE microcode     : CNN35x-MC-SSL-0014
+                             IPSec microcode       : CNN35x-MC-IPSEC-0005
+The 3DES/AES algorithms require a Encryption-3DES-AES entitlement.
+The 3DES/AES algorithms require a Encryption-3DES-AES entitlement.
+Done. (0)
+ERROR: Invalid version/level combination: no compatible ciphers found
+ERROR: Invalid version/level combination: no compatible ciphers found
+ERROR: Invalid version/level combination: no compatible ciphers found
+ERROR: Invalid version/level combination: no compatible ciphers found
+Creating context 'null'... The 3DES/AES algorithms require a Encryption-3DES-AES entitlement.
+The 3DES/AES algorithms require a Encryption-3DES-AES entitlement.
+Done. (507)
+
+Cisco Adaptive Security Appliance Software Version 99.14(3)15 <system>
+
+  ****************************** Warning *******************************
+  This product contains cryptographic features and is
+  subject to United States and local country laws
+  governing, import, export, transfer, and use.
+  Delivery of Cisco cryptographic products does not
+  imply third-party authority to import, export,
+  distribute, or use encryption. Importers, exporters,
+  distributors and users are responsible for compliance
+  with U.S. and local country laws. By using this
+  product you agree to comply with applicable laws and
+  regulations. If you are unable to comply with U.S.
+  and local laws, return the enclosed items immediately.
+
+  A summary of U.S. laws governing Cisco cryptographic
+  products may be found at:
+  http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+  If you require further assistance please contact us by
+  sending email to export@cisco.com.
+  ******************************* Warning *******************************
+Cisco Adaptive Security Appliance Software, version 99.14
+Copyright (c) 1996-2021 by Cisco Systems, Inc.
+For licenses and notices for open source software used in this product, please visit
+http://www.cisco.com/go/asa-opensource
+
+                Restricted Rights Legend
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+                Cisco Systems, Inc.
+                170 West Tasman Drive
+                San Jose, California 95134-1706
+
+Reading from flash...
+!INFO: Admin context is required to get the interfaces
+*** Output from config line 29, "arp timeout 14400"
+INFO: Admin context is required to get the interfaces
+*** Output from config line 30, "no arp permit-nonconnect..."
+INFO: Admin context is required to get the interfaces
+*** Output from config line 31, "arp rate-limit 32768"
+Creating context 'admin'... Done. (1)
+*** Output from config line 50, "admin-context admin"
+
+tls-proxy maximum-session 1000
+                          ^
+ERROR: % Invalid input detected at '^' marker.
+*** Output from config line 46, context 'admin', "tls-proxy maximum-sessio..."
+.
+Cryptochecksum (changed): e9dc62fa ff55050f e5d70a65 5f7e9204 
+*** Output from config line 53, "  config-url flash:/admi..."
+
+Cryptochecksum (changed): 26cb440c 49d1477c fd11160d 475389b9 
+
+INFO: Power-On Self-Test in process.
+.......................................................................
+INFO: Power-On Self-Test complete.
+
+INFO: Starting HW-DRBG health test...
+INFO: HW-DRBG health test passed.
+
+INFO: Starting SW-DRBG health test...
+INFO: SW-DRBG health test passed.
+nic_routing_priq_config: INFO: Num cruz routing filters: 2
+User enable_1 logged in to asa
+Logins over the last 1 days: 1.  
+Failed logins since the last login: 0.  
+Type help or '?' for a list of available commands.
+asa> 
+asa> 
+asa> en
+Password: *****
+asa# conf te
+asa(config)# 
+
+***************************** NOTICE *****************************
+
+Help to improve the ASA platform by enabling anonymous reporting,
+which allows Cisco to securely receive minimal error and health
+information from the device. To learn more about this feature,
+please visit: http://www.cisco.com/go/smartcall
+
+Would you like to enable anonymous error reporting to help improve
+the product? [Y]es, [N]o, [A]sk later: 
+asa(config)# 
+asa(config)# 
+asa(config)# 
+asa(config)# sh vrew
+                 ^
+ERROR: % Invalid input detected at '^' marker.
+asa(config)# sh ver
+
+Cisco Adaptive Security Appliance Software Version 99.14(3)15 <system>
+SSP Operating System Version 2.8(1.129)
+Device Manager Version 7.14(1)
+
+Compiled on Mon 07-Jun-21 00:02 GMT by builders
+System image file is "disk0:/fxos-lfbff-k8.2.8.1.129.SPA"
+Config file at boot was "startup-config"
+
+asa up 18 secs
+
+SSP Slot Number: 1  
+
+Hardware:   FPR4K-SM-12, 56496 MB RAM, CPU Xeon E5 series 2200 MHz, 1 CPU (24 cores)
+
+Encryption hardware device : Cisco FP Crypto on-board accelerator (revision 0x1)
+                             Boot microcode        : CN35x-MC-Boot-0001
+                             SSL/IKE microcode     : CNN35x-MC-SSL-0014
+                             IPSec microcode       : CNN35x-MC-IPSEC-0005
+                             Number of accelerators: 1
+
+4099: Int: Internal-Data0/0    : address is 0015.a500.01ef, irq 11
+4101: Int: Internal-Data0/1    : address is 0015.a500.001f, irq 10
+4102: Int: Internal-Data0/2    : address is 1200.0200.0100, irq 0
+
+asa(config)#  
+asa(config)# 
+asa(config)# sh int ip br
+Interface                  IP-Address      OK?           Method Status      Protocol
+Internal-Data0/0           unassigned      YES           unset  up          up  
+Internal-Data0/1           unassigned      YES           unset  up          up  
+Internal-Data0/2           unassigned      YES           unset  up          up  
+Port-channel1              unassigned      YES           unset  admin down  up  
+Port-channel2              unassigned      YES           unset  admin down  down
+Ethernet1/1                unassigned      YES           unset  up          up  
+Ethernet1/5                unassigned      YES           unset  admin down  up  
+Ethernet1/6                unassigned      YES           unset  admin down  up  
+asa(config)# 
+asa(config)# 
+asa(config)# sh mode
+asa(config)# sh mode 
+Security context mode: multiple 
+asa(config)# 
+asa(config)# 
+asa(config)# sh cpu
+System CPU utilization for 5 seconds = 0%; 1 minute: 0%; 5 minutes: 0%
+asa(config)# 
+asa(config)# 
+asa(config)# sh cpu de
+asa(config)# sh cpu detailed 
+
+Break down of per-core data path versus control point cpu usage:
+Core         5 sec            1 min            5 min
+Core 0       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 1       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 2       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 3       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 4       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 5       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 6       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 7       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 8       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 9       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 10      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 11      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 12      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 13      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 14      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 15      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 16      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 17      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 18      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 19      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 20      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 21      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+              
+Current control point elapsed versus the data and control point elapsed for:
+      5 seconds = 1.8%; 1 minute: 0.8%; 5 minutes: 0.2%
+
+
+CPU utilization of external processes for:
+      5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+
+
+Total System CPU utilization for:
+      5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+
+asa(config)# chan
+asa(config)# changet
+asa(config)# changeto con
+asa(config)# changeto context ?
+
+exec mode commands/options:
+  WORD  Context name
+asa(config)# changeto context test
+ERROR: 'test' is not valid 
+asa(config)# conte
+asa(config)# context test
+Creating context 'test'... Done. (2)
+asa(config-ctx)# 
+asa(config-ctx)# sh conte
+asa(config-ctx)# sh context 
+Context Name      Class                Interfaces           Mode         URL
+*admin            default              Ethernet1/1          Routed       disk0:/admin.cfg
+ test             default                                   Routed       (not entered)
+
+Total active Security Contexts: 2
+asa(config-ctx)# 
+asa(config-ctx)# 
+asa(config-ctx)# chan
+asa(config-ctx)# changeto
+asa(config-ctx)# changeto con
+asa(config-ctx)# changeto context test
+ERROR: Context hasn't been initialized with 'config-url'
+asa(config-ctx)# con
+asa(config-ctx)# confi
+asa(config-ctx)# config-u
+asa(config-ctx)# config-url ?
+
+context mode commands/options:
+  boot:   A URL beginning with this prefix for the context's config (file need
+          not exist)
+  disk0:  A URL beginning with this prefix for the context's config (file need
+          not exist)
+  flash:  A URL beginning with this prefix for the context's config (file need
+          not exist)
+  ftp:    A URL beginning with this prefix for the context's config (file need
+          not exist)
+  http:   A URL beginning with this prefix for the context's config (file need
+          not exist)
+  https:  A URL beginning with this prefix for the context's config (file need
+          not exist)
+  scp:    A URL beginning with this prefix for the context's config (file need
+          not exist)
+  smb:    A URL beginning with this prefix for the context's config (file need
+          not exist)
+  tftp:   A URL beginning with this prefix for the context's config (file need
+          not exist)
+asa(config-ctx)# config-url disk0
+asa(config-ctx)# config-url disk0:
+asa(config-ctx)# config-url disk0:/
+
+WARNING: Could not fetch the URL disk0:/
+INFO: Creating context with default config
+asa(config-ctx)# 
+asa(config-ctx)# 
+asa(config-ctx)# wr
+Building configuration...
+Cryptochecksum: e2c8a12b 6aba4e26 b0539302 8c97cb18 
+
+1861 bytes copied in 0.130 secs
+[OK]
+asa(config-ctx)# 
+asa(config-ctx)# chang
+asa(config-ctx)# changet
+asa(config-ctx)# changeto co
+asa(config-ctx)# changeto context test
+asa/test(config)# 
+asa/test(config)# 
+asa/test(config)# sh ver
+
+Cisco Adaptive Security Appliance Software Version 99.14(3)15 <context>
+SSP Operating System Version 2.8(1.129)
+Device Manager Version 7.14(1)
+
+Compiled on Mon 07-Jun-21 00:02 GMT by builders
+
+asa up 57 secs
+
+Hardware:   FPR4K-SM-12
+
+License mode: Smart Licensing
+
+Licensed features for this user context:
+Failover                          : Active/Active  
+Encryption-DES                    : Enabled        
+Encryption-3DES-AES               : Enabled        
+Carrier                           : Disabled       
+AnyConnect Premium Peers          : 0              
+Other VPN Peers                   : 0              
+AnyConnect for Mobile             : Enabled        
+AnyConnect for Cisco VPN Phone    : Enabled        
+Advanced Endpoint Assessment      : Enabled        
+Cluster                           : Enabled        
+
+asa/test(config)# 
+asa/test(config)# 
+asa/test(config)# s cERROR: % Ambiguous command:  "s c"
+asa/test(config)#       
+asa/test(config)# 
+asa/test(config)# 
+asa/test(config)# sh cpu
+Context CPU utilization for 5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+asa/test(config)# 
+asa/test(config)# 
+asa/test(config)# sh cpu det
+asa/test(config)# sh cpu detailed 
+
+Break down of per-core data path versus control point cpu usage:
+Core         5 sec            1 min            5 min
+Core 0       0.0 (0.0 + 0.0)  0.2 (0.0 + 0.2)  0.0 (0.0 + 0.0)
+Core 1       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 2       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 3       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 4       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 5       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 6       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 7       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 8       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 9       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 10      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 11      0.0 (0.0 + 0.0)  0.2 (0.0 + 0.2)  0.0 (0.0 + 0.0)
+Core 12      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 13      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 14      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 15      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 16      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 17      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 18      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 19      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 20      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 21      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+              
+Current control point elapsed versus the data and control point elapsed for:
+      5 seconds = 1.8%; 1 minute: 1.7%; 5 minutes: 0.8%
+
+
+CPU utilization of external processes for:
+      5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+
+
+Total System CPU utilization for:
+      5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+
+asa/test(config)# 
+asa/test(config)# 
+asa/test(config)# 
+asa/test(config)# chang
+asa/test(config)# changet
+asa/test(config)# changeto con
+asa/test(config)# changeto context sys
+asa/test(config)# changeto sys        
+asa/test(config)# changeto system 
+asa(config)# 
+asa(config)# 
+asa(config)# sh ver
+asa(config)# sh version 
+
+Cisco Adaptive Security Appliance Software Version 99.14(3)15 <system>
+SSP Operating System Version 2.8(1.129)
+Device Manager Version 7.14(1)
+
+Compiled on Mon 07-Jun-21 00:02 GMT by builders
+System image file is "disk0:/fxos-lfbff-k8.2.8.1.129.SPA"
+Config file at boot was "startup-config"
+
+asa up 2 mins 50 secs
+
+SSP Slot Number: 1  
+
+Hardware:   FPR4K-SM-12, 56496 MB RAM, CPU Xeon E5 series 2200 MHz, 1 CPU (24 cores)
+
+Encryption hardware device : Cisco FP Crypto on-board accelerator (revision 0x1)
+                             Boot microcode        : CN35x-MC-Boot-0001
+                             SSL/IKE microcode     : CNN35x-MC-SSL-0014
+                             IPSec microcode       : CNN35x-MC-IPSEC-0005
+                             Number of accelerators: 1
+
+4099: Int: Internal-Data0/0    : address is 0015.a500.01ef, irq 11
+4101: Int: Internal-Data0/1    : address is 0015.a500.001f, irq 10
+4102: Int: Internal-Data0/2    : address is 1200.0200.0100, irq 0
+
+asa(config)#  
+asa(config)# 
+asa(config)# sh cpu
+System CPU utilization for 5 seconds = 0%; 1 minute: 0%; 5 minutes: 0%
+asa(config)# 
+asa(config)# 
+asa(config)# sh cpu det
+asa(config)# sh cpu detailed 
+
+Break down of per-core data path versus control point cpu usage:
+Core         5 sec            1 min            5 min
+Core 0       0.0 (0.0 + 0.0)  0.1 (0.0 + 0.1)  0.0 (0.0 + 0.0)
+Core 1       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 2       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 3       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 4       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 5       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 6       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 7       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 8       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 9       0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 10      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 11      0.0 (0.0 + 0.0)  0.1 (0.0 + 0.1)  0.0 (0.0 + 0.0)
+Core 12      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 13      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 14      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 15      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 16      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 17      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 18      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 19      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 20      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+Core 21      0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)  0.0 (0.0 + 0.0)
+              
+Current control point elapsed versus the data and control point elapsed for:
+      5 seconds = 1.8%; 1 minute: 1.7%; 5 minutes: 0.9%
+
+
+CPU utilization of external processes for:
+      5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+
+
+Total System CPU utilization for:
+      5 seconds = 0.0%; 1 minute: 0.0%; 5 minutes: 0.0%
+
+asa(config)#  
+asa(config)# 
+asa(config)# sh mod 
+asa(config)# sh mode 
+Security context mode: multiple 
+asa(config)# 
+asa(config)# 
+asa(config)# exit
+asa# sh int ip br
+Interface                  IP-Address      OK?           Method Status      Protocol
+Internal-Data0/0           unassigned      YES           unset  up          up  
+Internal-Data0/1           unassigned      YES           unset  up          up  
+Internal-Data0/2           unassigned      YES           unset  up          up  
+Port-channel1              unassigned      YES           unset  admin down  up  
+Port-channel2              unassigned      YES           unset  admin down  down
+Ethernet1/1                unassigned      YES           unset  up          up  
+Ethernet1/5                unassigned      YES           unset  admin down  up  
+Ethernet1/6                unassigned      YES           unset  admin down  up  
+asa# 
+asa# 
+asa# con tw
+asa# con tw
+          ^
+ERROR: % Invalid input detected at '^' marker.
+asa# conf te
+asa(config)# 
+asa(config)# 
+asa(config)# 
+asa(config)# sh ver
+asa(config)# sh version 
+
+Cisco Adaptive Security Appliance Software Version 99.14(3)15 <system>
+SSP Operating System Version 2.8(1.129)
+Device Manager Version 7.14(1)
+
+Compiled on Mon 07-Jun-21 00:02 GMT by builders
+System image file is "disk0:/fxos-lfbff-k8.2.8.1.129.SPA"
+Config file at boot was "startup-config"
+
+asa up 3 mins 30 secs
+
+SSP Slot Number: 1  
+
+Hardware:   FPR4K-SM-12, 56496 MB RAM, CPU Xeon E5 series 2200 MHz, 1 CPU (24 cores)
+
+Encryption hardware device : Cisco FP Crypto on-board accelerator (revision 0x1)
+                             Boot microcode        : CN35x-MC-Boot-0001
+                             SSL/IKE microcode     : CNN35x-MC-SSL-0014
+                             IPSec microcode       : CNN35x-MC-IPSEC-0005
+                             Number of accelerators: 1
+
+4099: Int: Internal-Data0/0    : address is 0015.a500.01ef, irq 11
+4101: Int: Internal-Data0/1    : address is 0015.a500.001f, irq 10
+4102: Int: Internal-Data0/2    : address is 1200.0200.0100, irq 0
+
+License mode: Smart Licensing
+
+Licensed features for this platform:
+
+Licensed features for this platform:
+Maximum Physical Interfaces       : Unlimited      
+Maximum VLANs                     : 1024           
+Inside Hosts                      : Unlimited      
+Failover                          : Active/Active  
+Encryption-DES                    : Enabled        
+Encryption-3DES-AES               : Enabled        
+Security Contexts                 : 10             
+Carrier                           : Disabled       
+AnyConnect Premium Peers          : 10000          
+AnyConnect Essentials             : Disabled       
+Other VPN Peers                   : 10000          
+Total VPN Peers                   : 10000          
+AnyConnect for Mobile             : Enabled        
+AnyConnect for Cisco VPN Phone    : Enabled        
+Advanced Endpoint Assessment      : Enabled        
+Shared License                    : Disabled       
+Total TLS Proxy Sessions          : 10000          
+Cluster                           : Enabled        
+
+Serial Number: FLM23420F9H
+Configuration last modified by enable_15 at 08:48:56.955 UTC Fri Jun 25 2021
+asa(config)#  
+asa(config)# 
